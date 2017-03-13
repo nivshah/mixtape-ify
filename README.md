@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app lets you share a spotify playlist you made with another user but without giving away the tracklisting of the playlist. This preserves the surprise and joy of sharing a mix with someone.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+(there are a lot of rules)[https://www.youtube.com/watch?v=IzQwbRdh5Ts]
