@@ -1,27 +1,29 @@
-<% if @spotify_user %>
-  Logged in as <%= @spotify_user.display_name %>
-  <table>
-    <thead>
-      <tr>
-        <th>Playlist</th>
-        <th>Mixtape-ify Link</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @playlists.each do |playlist| %>
+<% if !@playlist %>
+  <% if @spotify_user %>
+    Logged in as <%= @spotify_user.display_name %>
+    <table>
+      <thead>
         <tr>
-          <td><%= playlist['name'] %></td>
-          <td><a href="<%= playlist['link'] %>">Link</a></td>
+          <th>Playlist</th>
+          <th>Mixtape-ify Link</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% else %>
-  <%= link_to 'Sign in with Spotify', '/auth/spotify' %>
+      </thead>
+      <tbody>
+        <% @playlists.each do |playlist| %>
+          <tr>
+            <td><%= playlist['name'] %></td>
+            <td><a href="<%= playlist['link'] %>">Link</a></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <%= link_to 'Sign in with Spotify', '/auth/spotify' %>
+  <% end %>
 <% end %>
 
 <% if @playlist %>
-  Listen to <%= @playlist.name %>
+  Listening to <%= @playlist.name %> from <%= @playlist.owner.id %>
   <script type="text/javascript">
   var a = new Audio();
   a.src = '<%= @playlist.tracks.first.preview_url %>';
