@@ -25,9 +25,9 @@
 <% if @playlist %>
   Listening to <%= @playlist.name %> from <%= @playlist.owner.id %>
   <script type="text/javascript">
-  var a = new Audio();
-  a.src = '<%= @playlist.tracks.first.preview_url %>';
-  a.play();
+    var a = new Audio();
+    a.src = '<%= @playlist.tracks.first.preview_url %>';
+    // a.play();
   </script>
 <% else %>
   <%= link_to 'Try this thing', "/?p=#{@playlist_param}" %>
