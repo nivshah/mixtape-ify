@@ -56,3 +56,5 @@ gem 'dotenv-rails', require: 'dotenv/rails-now', group: [:development, :test]
 gem 'omniauth-oauth2', '1.3.1'
 
 gem 'sqlite3'
+
+gem 'nokogiri', '~> 1.8.1'
